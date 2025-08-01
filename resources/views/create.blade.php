@@ -12,18 +12,18 @@
             }
         }
     </style>
-    <title>Welcome</title>
+    <title>Create</title>
 
 </head>
 <body>
 
-    <div class="container">
-        <div class="flex justify-between my-5">
-            <h2 class="text-red-500 text-xl"> Home </h2>
-            <a href="/create" class="bg-green-600 text-white rounded py-2 px-4"> Add New Post </a>
-        </div>
-
+<div class="container">
+    <div class="flex justify-between my-5">
+        <h2 class="text-red-500 text-xl"> Create Page </h2>
+        <a href="/" class="bg-green-600 text-white rounded py-2 px-4"> Back to Home </a>
     </div>
+
+</div>
 
 </body>
 </html>
