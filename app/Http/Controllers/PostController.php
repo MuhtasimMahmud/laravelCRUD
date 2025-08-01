@@ -9,4 +9,8 @@ class PostController extends Controller
     public function create(){
         return view('create');
     }
+
+    public function ourFileStore(){
+        return 'post test';
+    }
 }
