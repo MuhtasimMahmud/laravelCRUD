@@ -22,7 +22,9 @@
             <h2 class="text-red-500 text-xl"> Home </h2>
             <a href="/create" class="bg-green-600 text-white rounded py-2 px-4"> Add New Post </a>
         </div>
-
+        @if(session('success'))
+            <h2 class="text-green-600"> {{ session ('success')}}</h2>
+        @endif
     </div>
 
 </body>
