@@ -47,8 +47,6 @@ class PostController extends Controller
     }
 
     public function updateData($id, Request $request){
-
-
         $validated = $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -72,6 +70,15 @@ class PostController extends Controller
         $post->save();
 
         return redirect()->route('home')->with('success', 'Your post has been updated!');
+    }
+
+    public function deleteData($id){
+        $post = Post::findOrFail($id);
+
+        $post->delete();
+
+        return redirect()->route('home')->with('success', 'Your post has been deleted!');
+
     }
 
 

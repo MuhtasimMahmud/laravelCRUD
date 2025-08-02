@@ -12,7 +12,7 @@
             }
 
             .btn{
-                @apply bg-green-600 text-white rounded py-2 px-4
+                @apply text-white rounded py-2 px-4
             }
         }
     </style>
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="flex justify-between my-5">
             <h2 class="text-red-500 text-xl"> Home </h2>
-            <a href="/create" class="btn"> Add New Post </a>
+            <a href="/create" class="btn bg-green-600"> Add New Post </a>
         </div>
         @if(session('success'))
             <h2 class="text-green-600"> {{ session ('success')}}</h2>
@@ -59,8 +59,15 @@
                                     <img src="images/{{ $post->image }}" alt="" class="w-10 rounded-full">
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                    <a href="{{route('edit', $post->id)}}" class="btn"> Edit </a>
+                                    <a href="{{ route('edit', $post->id) }}" class="btn bg-green-600 hover:text-blue-800 mr-4">
+                                        Edit
+                                    </a>
+
+                                    <a href="{{ route('delete', $post->id) }}" class="btn bg-red-600 hover:text-red-800">
+                                        Delete
+                                    </a>
                                 </td>
+
                             </tr>
                             @endforeach
 
