@@ -77,7 +77,9 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect()->route('home')->with('success', 'Your post has been deleted!');
+        flash()->success("Your contact has been deleted");
+
+        return redirect()->route('home');
 
     }
 
