@@ -12,14 +12,14 @@
             }
         }
     </style>
-    <title>Create</title>
+    <title>Create Contact</title>
 
 </head>
 <body>
 
 <div class="container">
     <div class="flex justify-between my-5">
-        <h2 class="text-red-500 text-xl"> Create Page </h2>
+        <h2 class="text-red-500 text-xl"> Create Contact </h2>
         <a href="/" class="bg-green-600 text-white rounded py-2 px-4"> Back to Home </a>
     </div>
 
@@ -34,9 +34,9 @@
                 @enderror
 
 
-                <label for=""> Description </label>
-                <input type="text" name="description" value="{{old('description')}}">
-                @error('description')
+                <label for=""> Contact </label>
+                <input type="text" name="contact" value="{{old('contact')}}">
+                @error('contact')
                     <p class="text-red-600"> {{$message}} </p>
                 @enderror
 

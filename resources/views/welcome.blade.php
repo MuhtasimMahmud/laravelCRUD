@@ -24,7 +24,7 @@
     <div class="container">
         <div class="flex justify-between my-5">
             <h2 class="text-red-500 text-xl"> Home </h2>
-            <a href="/create" class="btn bg-green-600"> Add New Post </a>
+            <a href="/create" class="btn bg-green-600"> Add New Contact </a>
         </div>
         @if(session('success'))
             <h2 class="text-green-600"> {{ session ('success')}}</h2>
@@ -40,7 +40,7 @@
                                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium ">ID</th>
 
                                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium">Name</th>
-                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium">Description</th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium">Contact</th>
 
                                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium">Image</th>
                                 <th scope="col" class="px-6 py-3 text-end text-xs font-medium">Action</th>
@@ -53,10 +53,10 @@
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ $post->id }}</td>
 
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800"> {{ $post->name }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800"> {{ $post->description }} </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800"> {{ $post->contact }} </td>
 
                                 <td class="px-6 py-4">
-                                    <img src="images/{{ $post->image }}" alt="" class="w-10 rounded-full">
+                                    <img src="images/{{ $post->image }}" alt="" class="w-12 h-12 object-cover rounded-full border border-gray-300 shadow-sm">
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                     <a href="{{ route('edit', $post->id) }}" class="btn bg-green-600 hover:text-blue-800 mr-4">

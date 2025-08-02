@@ -34,9 +34,9 @@
                 @enderror
 
 
-                <label for=""> Description </label>
-                <input type="text" name="description" value="{{$ourPost -> description}}">
-                @error('description')
+                <label for=""> Contact </label>
+                <input type="text" name="contact" value="{{$ourPost -> contact}}">
+                @error('contact')
                 <p class="text-red-600"> {{$message}} </p>
                 @enderror
 
