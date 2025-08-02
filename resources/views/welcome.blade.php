@@ -34,16 +34,16 @@
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <div class="overflow-hidden">
-                        <table class="min-w-full divide-y divide-gray-200">
-                            <thead>
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700 border border-green-500 my-5">
+                            <thead class="bg-green-600 text-white">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">ID</th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium ">ID</th>
 
-                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
-                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Description</th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium">Name</th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium">Description</th>
 
-                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Image</th>
-                                <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium">Image</th>
+                                <th scope="col" class="px-6 py-3 text-end text-xs font-medium">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -63,17 +63,31 @@
                                         Edit
                                     </a>
 
-                                    <a href="{{ route('delete', $post->id) }}" class="btn bg-red-600 hover:text-red-800">
-                                        Delete
-                                    </a>
+                                    <form method="post" action="{{route('delete', $post->id)}}" class="inline">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="bg-red-600 text-white rounded py-2 px-4" type="submit"> Delete </button>
+                                    </form>
+
                                 </td>
 
                             </tr>
                             @endforeach
 
 
+
+
                             </tbody>
                         </table>
+
+
+                        <!--pagination-->
+                        <div class="px-6 py-8">
+                            <div class="[&_*]:!bg-white [&_*]:!text-gray-800">
+                                {{ $posts->links() }}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
