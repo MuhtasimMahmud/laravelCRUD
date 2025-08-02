@@ -19,11 +19,19 @@ class PostController extends Controller
             'image' => 'nullable|mimes:jpeg,png',
         ]);
 
+        // upload image
+        $imageName = null;
+        if(isset($request->image)){
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+        }
+
+        // Add new post
         $post = new Post();
 
         $post->name = $request->name;
         $post->description = $request->description;
-        $post->image = $request->image;
+        $post->image = $imageName;
 
         $post->save();
 
